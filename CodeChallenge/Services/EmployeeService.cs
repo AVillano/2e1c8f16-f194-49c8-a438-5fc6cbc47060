@@ -93,7 +93,8 @@ namespace CodeChallenge.Services
             if (visited.Contains(employee.EmployeeId)
                 || employee == null)
             {
-                return 0;
+                // need to subtract 1 because the employee has already been counted as a direct report from the parent
+                return -1;
             }
 
             _logger.LogDebug("EmployeeService.CountNumberOfReports: Counting reports for employee id - " + employee.EmployeeId);
