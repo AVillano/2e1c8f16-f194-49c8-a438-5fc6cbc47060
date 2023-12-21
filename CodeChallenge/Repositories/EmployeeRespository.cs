@@ -39,7 +39,7 @@ namespace CodeChallenge.Repositories
 
         public Employee Remove(Employee employee)
         {
-            return _employeeContext.Remove(employee).Entity;
+            return _employeeContext.Employees.Remove(employee).Entity;
         }
 
         public IEnumerable<Employee> GetDirectReportsByManagerId(string id)
