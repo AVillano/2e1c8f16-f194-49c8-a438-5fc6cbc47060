@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "17a75b51-cba9-4222-8a1a-be3a919161d3",
+		"name": "Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28732937"
+	},
+	"item": [
+		{
+			"name": "Employee_Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/employee/03aa1462-ffa9-4978-901b-7c001562cf6f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"03aa1462-ffa9-4978-901b-7c001562cf6f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee_Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": \"26a596ae-edd3-4847-99fe-c4518e82c86f\",\r\n    \"firstName\": \"Richard\",\r\n    \"lastName\": \"Jeffries\",\r\n    \"position\": \"Software Engineer 1\",\r\n    \"department\": \"Engineering\",\r\n    \"directReports\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee_Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Richard\",\r\n    \"lastName\": \"Jeffries\",\r\n    \"position\": \"Software Engineer 2\",\r\n    \"department\": \"Engineering\",\r\n    \"directReports\": null\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/employee/c5fe5166-6c3b-4591-a95f-94e627e1fda8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"c5fe5166-6c3b-4591-a95f-94e627e1fda8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReportingStructure_Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/employee/03aa1462-ffa9-4978-901b-7c001562cf6f/reportingstructure",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"03aa1462-ffa9-4978-901b-7c001562cf6f",
+						"reportingstructure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compensation_Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/compensation/03aa1462-ffa9-4978-901b-7c001562cf6f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"compensation",
+						"03aa1462-ffa9-4978-901b-7c001562cf6f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compensation_Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeId\": \"03aa1462-ffa9-4978-901b-7c001562cf6f\",\r\n    \"salary\": \"8900000\",\r\n    \"effectiveDate\": \"2023-12-21T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/compensation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"compensation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
