@@ -1,5 +1,6 @@
 ﻿using CodeChallenge.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CodeChallenge.Repositories
@@ -10,5 +11,6 @@ namespace CodeChallenge.Repositories
         Employee Add(Employee employee);
         Employee Remove(Employee employee);
         Task SaveAsync();
+        IEnumerable<Employee> GetDirectReportsByManagerId(string id);
     }
 }

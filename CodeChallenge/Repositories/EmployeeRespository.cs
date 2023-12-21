@@ -41,5 +41,10 @@ namespace CodeChallenge.Repositories
         {
             return _employeeContext.Remove(employee).Entity;
         }
+
+        public IEnumerable<Employee> GetDirectReportsByManagerId(string id)
+        {
+            return _employeeContext.Employees.Where(e => e.ManagersEmployeeId == id);
+        }
     }
 }

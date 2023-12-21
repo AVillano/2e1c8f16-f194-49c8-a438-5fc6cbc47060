@@ -48,7 +48,7 @@ namespace CodeChallenge.Controllers
         [HttpPut("{id}")]
         public IActionResult ReplaceEmployee(String id, [FromBody]Employee newEmployee)
         {
-            _logger.LogDebug($"Recieved employee update request for '{id}'");
+            _logger.LogDebug($"Received employee update request for '{id}'");
 
             var existingEmployee = _employeeService.GetById(id);
             if (existingEmployee == null)
@@ -57,6 +57,22 @@ namespace CodeChallenge.Controllers
             _employeeService.Replace(existingEmployee, newEmployee);
 
             return Ok(newEmployee);
+        }
+
+        [HttpGet("{id}/reportingStructure")]
+        public IActionResult GetReportingStructureByEmployeeId(String id)
+        {
+            _logger.LogDebug($"EmployeeController.GetReportingStructureByEmployeeId: Received reporting structure request for employee with id '{id}'");
+
+            var employee = _employeeService.GetById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            var reportingStructure = _employeeService.GenerateReportingStructure(employee);
+
+            return Ok(reportingStructure);
         }
     }
 }

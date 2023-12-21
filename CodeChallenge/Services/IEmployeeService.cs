@@ -1,4 +1,5 @@
 ﻿using CodeChallenge.Models;
+using CodeChallenge.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace CodeChallenge.Services
         Employee GetById(String id);
         Employee Create(Employee employee);
         Employee Replace(Employee originalEmployee, Employee newEmployee);
+
+        ReportingStructure GenerateReportingStructure(Employee employee);
     }
 }
